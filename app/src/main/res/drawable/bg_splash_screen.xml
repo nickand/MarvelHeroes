@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/red_dark" />
+    <item
+        android:width="@dimen/bg_splash_width"
+        android:height="@dimen/bg_splash_height"
+        android:drawable="@drawable/ic_marvel_logo"
+        android:gravity="center" />
+</layer-list>

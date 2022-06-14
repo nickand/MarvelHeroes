@@ -1,12 +1,12 @@
 package com.example.marvelheroes.data.model
 
-import com.example.marvelheroes.data.*
 import com.example.marvelheroes.util.ModelMapper
+import javax.inject.Inject
 
 /**
  * Transform @see CharacterDTO to @see Character and the other way around.
  */
-class CharacterDTOMapper : ModelMapper<CharacterDTO, Character> {
+class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Character> {
     override fun mapToModel(model: CharacterDTO): Character {
         return Character(
             id = model.id,

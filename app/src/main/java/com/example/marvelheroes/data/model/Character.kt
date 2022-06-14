@@ -1,4 +1,4 @@
-package com.example.marvelheroes.data
+package com.example.marvelheroes.data.model
 
 /**
  * Domain object representing a Marvel character

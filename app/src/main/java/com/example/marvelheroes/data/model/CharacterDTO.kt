@@ -1,20 +1,22 @@
 package com.example.marvelheroes.data.model
 
+import com.google.gson.annotations.SerializedName
+
 /**
  * Data transfer objects to hold the details of a Character
  */
 data class CharacterDTO(
-    var id: Int? = null,
-    var name: String? = null,
-    var description: String? = null,
-    var modified: String? = null,
-    var thumbnail: ThumbnailDTO? = ThumbnailDTO(),
-    var resourceURI: String? = null,
-    var comics: ComicsDTO? = ComicsDTO(),
-    var series: SeriesDTO? = SeriesDTO(),
-    var stories: StoriesDTO? = StoriesDTO(),
-    var events: EventsDTO? = EventsDTO(),
-    var urls: ArrayList<UrlsDTO> = arrayListOf()
+    @SerializedName("id") var id: Int? = null,
+    @SerializedName("name") var name: String? = null,
+    @SerializedName("description") var description: String? = null,
+    @SerializedName("modified") var modified: String? = null,
+    @SerializedName("thumbnail") var thumbnail: ThumbnailDTO? = ThumbnailDTO(),
+    @SerializedName("resourceURI") var resourceURI: String? = null,
+    @SerializedName("comics") var comics: ComicsDTO? = ComicsDTO(),
+    @SerializedName("series") var series: SeriesDTO? = SeriesDTO(),
+    @SerializedName("stories") var stories: StoriesDTO? = StoriesDTO(),
+    @SerializedName("events") var events: EventsDTO? = EventsDTO(),
+    @SerializedName("urls") var urls: ArrayList<UrlsDTO> = arrayListOf()
 )
 
 data class ThumbnailDTO (
