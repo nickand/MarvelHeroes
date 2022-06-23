@@ -7,5 +7,6 @@
     </debug-overrides>
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">mlstatic.com</domain>
+        <domain includeSubdomains="true">i.annihil.us</domain>
     </domain-config>
 </network-security-config>

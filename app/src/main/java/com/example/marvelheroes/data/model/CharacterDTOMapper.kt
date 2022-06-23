@@ -19,8 +19,8 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 model.comics?.available, model.comics?.collectionURI,
                 arrayListOf(
                     Items(
-                        model.comics?.items?.get(0)?.resourceURI,
-                        model.comics?.items?.get(0)?.name
+                        model.comics?.items?.firstOrNull()?.resourceURI,
+                        model.comics?.items?.firstOrNull()?.name
                     )
                 ),
                 model.comics?.returned
@@ -29,8 +29,8 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 model.series?.available, model.series?.collectionURI,
                 arrayListOf(
                     Items(
-                        model.series?.items?.get(0)?.resourceURI,
-                        model.series?.items?.get(0)?.name
+                        model.series?.items?.firstOrNull()?.resourceURI,
+                        model.series?.items?.firstOrNull()?.name
                     )
                 )
             ),
@@ -39,8 +39,8 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 model.stories?.collectionURI,
                 arrayListOf(
                     Items(
-                        model.stories?.items?.get(0)?.resourceURI,
-                        model.stories?.items?.get(0)?.name
+                        model.stories?.items?.firstOrNull()?.resourceURI,
+                        model.stories?.items?.firstOrNull()?.name
                     )
                 ),
                 model.stories?.returned
@@ -50,16 +50,16 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 model.events?.collectionURI,
                 arrayListOf(
                     Items(
-                        model.events?.items?.get(0)?.resourceURI,
-                        model.events?.items?.get(0)?.name
+                        model.events?.items?.firstOrNull()?.resourceURI,
+                        model.events?.items?.firstOrNull()?.name
                     )
                 ),
                 model.events?.returned
             ),
             urls = arrayListOf(
                 Urls(
-                    model.urls[0].type,
-                    model.urls[0].url
+                    model.urls?.firstOrNull()?.type,
+                    model.urls?.firstOrNull()?.url
                 )
             )
         )
@@ -77,8 +77,8 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 domainModel.comics?.available, domainModel.comics?.collectionURI,
                 arrayListOf(
                     ItemsDTO(
-                        domainModel.comics?.items?.get(0)?.resourceURI,
-                        domainModel.comics?.items?.get(0)?.name
+                        domainModel.comics?.items?.firstOrNull()?.resourceURI,
+                        domainModel.comics?.items?.firstOrNull()?.name
                     )
                 ),
                 domainModel.comics?.returned
@@ -87,8 +87,8 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 domainModel.series?.available, domainModel.series?.collectionURI,
                 arrayListOf(
                     ItemsDTO(
-                        domainModel.series?.items?.get(0)?.resourceURI,
-                        domainModel.series?.items?.get(0)?.name
+                        domainModel.series?.items?.firstOrNull()?.resourceURI,
+                        domainModel.series?.items?.firstOrNull()?.name
                     )
                 )
             ),
@@ -97,8 +97,8 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 domainModel.stories?.collectionURI,
                 arrayListOf(
                     ItemsDTO(
-                        domainModel.stories?.items?.get(0)?.resourceURI,
-                        domainModel.stories?.items?.get(0)?.name
+                        domainModel.stories?.items?.firstOrNull()?.resourceURI,
+                        domainModel.stories?.items?.firstOrNull()?.name
                     )
                 ),
                 domainModel.stories?.returned
@@ -108,16 +108,16 @@ class CharacterDTOMapper @Inject constructor(): ModelMapper<CharacterDTO, Charac
                 domainModel.events?.collectionURI,
                 arrayListOf(
                     ItemsDTO(
-                        domainModel.events?.items?.get(0)?.resourceURI,
-                        domainModel.events?.items?.get(0)?.name
+                        domainModel.events?.items?.firstOrNull()?.resourceURI,
+                        domainModel.events?.items?.firstOrNull()?.name
                     )
                 ),
                 domainModel.events?.returned
             ),
             urls = arrayListOf(
                 UrlsDTO(
-                    domainModel.urls[0].type,
-                    domainModel.urls[0].url
+                    domainModel.urls.firstOrNull()?.type,
+                    domainModel.urls.firstOrNull()?.url
                 )
             )
         )

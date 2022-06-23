@@ -34,8 +34,8 @@ class CharactersRepositoryImpl(
 
     override suspend fun getCharacters(): Resource<List<Character?>> {
         return try {
-            val dtoList = marvelAPI.getCharacters().results
-            val domainList = dtoMapper.toDomainList(dtoList)
+            val dtoList = marvelAPI.getCharacters().data?.results
+            val domainList = dtoMapper.toDomainList(dtoList.orEmpty().filterNotNull())
             //val cacheList = cacheMapper.fromList(domainList)
             //productDAO.deleteAll()
             //productDAO.save(*cacheList.toTypedArray())

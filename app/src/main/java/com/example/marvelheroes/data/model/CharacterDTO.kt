@@ -16,7 +16,7 @@ data class CharacterDTO(
     @SerializedName("series") var series: SeriesDTO? = SeriesDTO(),
     @SerializedName("stories") var stories: StoriesDTO? = StoriesDTO(),
     @SerializedName("events") var events: EventsDTO? = EventsDTO(),
-    @SerializedName("urls") var urls: ArrayList<UrlsDTO> = arrayListOf()
+    @SerializedName("urls") var urls: ArrayList<UrlsDTO?>? = arrayListOf()
 )
 
 data class ThumbnailDTO (
@@ -32,28 +32,28 @@ data class ItemsDTO(
 data class ComicsDTO(
     var available: Int? = null,
     var collectionURI: String? = null,
-    var items: ArrayList<ItemsDTO> = arrayListOf(),
+    var items: ArrayList<ItemsDTO?>? = arrayListOf(),
     var returned: Int? = null
 )
 
 data class SeriesDTO(
     var available: Int? = null,
     var collectionURI: String? = null,
-    var items: ArrayList<ItemsDTO> = arrayListOf(),
+    var items: ArrayList<ItemsDTO?>? = arrayListOf(),
     var returned: Int? = null
 )
 
 data class StoriesDTO(
     var available: Int? = null,
     var collectionURI: String? = null,
-    var items: ArrayList<ItemsDTO> = arrayListOf(),
+    var items: ArrayList<ItemsDTO?>? = arrayListOf(),
     var returned: Int? = null
 )
 
 data class EventsDTO(
     var available: Int? = null,
     var collectionURI: String? = null,
-    var items: ArrayList<ItemsDTO> = arrayListOf(),
+    var items: ArrayList<ItemsDTO?>? = arrayListOf(),
     var returned: Int? = null
 )
 

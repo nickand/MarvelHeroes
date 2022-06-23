@@ -8,8 +8,7 @@ import coil.request.ImageResult
 import coil.size.Scale
 import com.example.marvelheroes.R
 
-class ImageUtils {
-    companion object {
+object ImageUtils {
         fun load(imageView: ImageView, url:String,
                  @DrawableRes placeholder: Int) {
             imageView.load(url) {
@@ -35,5 +34,4 @@ class ImageUtils {
                 })
             }
         }
-    }
 }

@@ -2,6 +2,7 @@ package com.example.marvelheroes.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelheroes.R
 import com.example.marvelheroes.data.model.Character
@@ -18,10 +19,11 @@ class CharacterListAdapter(
     private val onItemClicked: (Character) -> Unit
 ) : RecyclerView.Adapter<CharacterListAdapter.ResultViewHolder>()  {
 
-    var characterList: List<Character?>? = null
+    var characterList: List<Character?>? = emptyList()
         set(value) {
+            val diffCallback = DiffCallback(value, field)
+            DiffUtil.calculateDiff(diffCallback).dispatchUpdatesTo(this)
             field = value
-            notifyDataSetChanged()
         }
 
     inner class ResultViewHolder(
@@ -55,12 +57,26 @@ class CharacterListAdapter(
         holder.name.text = characterList?.get(position)?.name
         val decimalFormat = DecimalFormat("#,###,###")
         decimalFormat.roundingMode = RoundingMode.DOWN
-        holder.price.text = "$ ".plus(decimalFormat.format(characterList?.get(position)?.comics))
+        holder.price.text = """$ ${decimalFormat.format(characterList?.get(position)?.comics?.available)}"""
         ImageUtils.load(
             imageView = holder.image,
             placeholder = R.drawable.ic_image,
-            url = characterList?.get(position)?.thumbnail?.path + "." + characterList?.get(position)?.thumbnail?.extension
+            url = characterList?.get(position)?.thumbnail?.run { "$path.$extension" }.orEmpty()
         )
         holder.image.setRoundCorners(R.dimen.radius_size_s)
     }
+}
+
+class DiffCallback<out T: List<*>>(private val oldList: T?, private val newList: T?): DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList?.size ?: 0
+
+    override fun getNewListSize(): Int = newList?.size ?: 0
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+        oldList?.get(oldItemPosition) === newList?.get(newItemPosition)
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+        oldList?.get(oldItemPosition) == newList?.get(newItemPosition)
+
 }
