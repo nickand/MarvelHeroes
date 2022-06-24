@@ -7,17 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
-import androidx.appcompat.widget.SearchView
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelheroes.R
 import com.example.marvelheroes.data.model.Character
 import com.example.marvelheroes.data.model.Resource
 import com.example.marvelheroes.databinding.FragmentCharacterListBinding
 import com.example.marvelheroes.ui.main.adapter.CharacterListAdapter
+import com.example.marvelheroes.util.GridSpacingItemDecoration
 import com.google.android.material.snackbar.Snackbar
 
 /**
@@ -38,7 +38,7 @@ class CharacterListFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCharacterListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,13 +56,10 @@ class CharacterListFragment : BaseFragment() {
         binding.toolbar.setTitle(R.string.app_name)
 
         //RecyclerView setup
-        binding.charactersList.layoutManager = LinearLayoutManager(context)
+        binding.charactersList.layoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
         binding.charactersList.adapter = characterListAdapter
         binding.charactersList.addItemDecoration(
-            DividerItemDecoration(
-                context,
-                DividerItemDecoration.VERTICAL
-            )
+            GridSpacingItemDecoration(20, 20, 20, 20, GridSpacingItemDecoration.GRID)
         )
 
         viewModel.getCharacters()

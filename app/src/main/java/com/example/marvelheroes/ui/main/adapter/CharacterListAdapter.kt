@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelheroes.R
 import com.example.marvelheroes.data.model.Character
+import com.example.marvelheroes.databinding.ItemGridViewCharacterBinding
 import com.example.marvelheroes.databinding.ItemViewCharacterBinding
 import com.example.marvelheroes.extensions.setRoundCorners
 import com.example.marvelheroes.util.ImageUtils
@@ -27,11 +28,11 @@ class CharacterListAdapter(
         }
 
     inner class ResultViewHolder(
-        view: ItemViewCharacterBinding,
+        view: ItemGridViewCharacterBinding,
         onItemClicked: (Int) -> Unit
     ) : RecyclerView.ViewHolder(view.root) {
 
-        private val binding = ItemViewCharacterBinding.bind(view.root)
+        private val binding = ItemGridViewCharacterBinding.bind(view.root)
         val name = binding.productNameLabel
         val price = binding.productPriceLabel
         val image = binding.productImage
@@ -45,7 +46,7 @@ class CharacterListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultViewHolder {
         return ResultViewHolder(
-            ItemViewCharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemGridViewCharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         ) { characterList?.get(it)?.let(onItemClicked) }
     }
 
@@ -60,7 +61,7 @@ class CharacterListAdapter(
         holder.price.text = """$ ${decimalFormat.format(characterList?.get(position)?.comics?.available)}"""
         ImageUtils.load(
             imageView = holder.image,
-            placeholder = R.drawable.ic_image,
+            placeholder = R.drawable.ic_thor,
             url = characterList?.get(position)?.thumbnail?.run { "$path.$extension" }.orEmpty()
         )
         holder.image.setRoundCorners(R.dimen.radius_size_s)
