@@ -5,7 +5,6 @@ package com.example.marvelheroes.ui.details.adapter.model
  */
 data class DetailsItemView(
     val title: String,
-    val price: Double,
     val currency: String,
     val permalink: String,
 ): ViewType {

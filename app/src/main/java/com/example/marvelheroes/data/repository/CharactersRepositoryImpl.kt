@@ -27,4 +27,11 @@ class CharactersRepositoryImpl(
             Resource.Error(throwable.message ?: "Error fetching result list from service")
         }
     }
+
+
+    override suspend fun get(query: String): Resource<Character> {
+        val char = getCharacters().data?.find { it?.id.toString() == query }!!
+        return Resource.Success(char)
+    }
+
 }

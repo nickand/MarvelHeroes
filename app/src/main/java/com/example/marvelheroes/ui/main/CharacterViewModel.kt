@@ -50,14 +50,14 @@ class CharacterViewModel @Inject constructor(
         }
     }
 
-    /*fun getCharacterDetails(id: String) {
+    fun getCharacterDetails(id: String) {
         viewModelScope.launch {
             runCatching {
                 _product.postValue(Resource.Loading())
                 _product.postValue(charactersRepository.get(id))
-            }.onFailure { throwable ->
+            }/*.onFailure { throwable ->
                 _productList.postValue(Resource.Error(throwable.message ?: "Error fetching result list from service"))
-            }
+            }*/
         }
-    }*/
+    }
 }
