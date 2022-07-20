@@ -6,5 +6,5 @@ package com.example.marvelheroes.ui.details.adapter.model
 object AdapterConstants {
     const val PICTURES = 1
     const val ATTRIBUTES = 2
-    const val DETAILS = 3
+    const val TITLE = 3
 }

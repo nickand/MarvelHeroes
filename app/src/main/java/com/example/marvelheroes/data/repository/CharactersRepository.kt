@@ -9,5 +9,5 @@ import com.example.marvelheroes.data.model.Resource
 interface CharactersRepository {
     //suspend fun search(query: String) : Resource<List<Character?>>
     suspend fun getCharacters() : Resource<List<Character?>>
-    //suspend fun get(query: String) : Resource<Character>
+    suspend fun get(query: String) : Resource<Character>
 }

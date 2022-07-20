@@ -26,9 +26,9 @@ class CharacterViewModel @Inject constructor(
     val characterList: LiveData<Resource<List<Character?>>>
         get() = _characterList
 
-    private val _product = MutableLiveData<Resource<Character>>()
+    private val _character = MutableLiveData<Resource<Character>>()
     val product: LiveData<Resource<Character>>
-        get() = _product
+        get() = _character
 
     fun getCharacters() {
         _characterList.value = Resource.Loading()
@@ -50,14 +50,14 @@ class CharacterViewModel @Inject constructor(
         }
     }
 
-    /*fun getCharacterDetails(id: String) {
+    fun getCharacterDetails(id: String) {
         viewModelScope.launch {
             runCatching {
-                _product.postValue(Resource.Loading())
-                _product.postValue(charactersRepository.get(id))
+                _character.postValue(Resource.Loading())
+                _character.postValue(charactersRepository.get(id))
             }.onFailure { throwable ->
-                _productList.postValue(Resource.Error(throwable.message ?: "Error fetching result list from service"))
+                _characterList.postValue(Resource.Error(throwable.message ?: "Error fetching result list from service"))
             }
         }
-    }*/
+    }
 }

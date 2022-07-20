@@ -5,11 +5,11 @@
     <string name="action_search">Buscar</string>
     <string name="search_hint">Buscar productos…</string>
 
-    <!-- Product Detail -->
-    <string name="product_detail_title">Producto</string>
+    <!-- Character Detail -->
+    <string name="product_detail_title">Character Detail</string>
 
     <!-- Errors -->
     <string name="error_fetch_failed">Hubo un problema, intenta de nuevo.</string>
     <string name="no_serach">Hey! No se ha iniciado una búsqueda,\nintenta realizar una para ver resultados aquí.</string>
-    <string name="product_info_title">Información del producto</string>
+    <string name="product_info_title">Character Info</string>
 </resources>

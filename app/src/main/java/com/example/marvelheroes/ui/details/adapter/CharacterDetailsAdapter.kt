@@ -3,9 +3,10 @@ package com.example.marvelheroes.ui.details.adapter
 import android.view.ViewGroup
 import androidx.collection.SparseArrayCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.marvelheroes.ui.details.adapter.model.AdapterConstants
+import com.example.marvelheroes.ui.details.adapter.model.AdapterConstants.PICTURES
+import com.example.marvelheroes.ui.details.adapter.model.AdapterConstants.TITLE
 import com.example.marvelheroes.ui.details.adapter.model.PictureItemView
-import com.example.marvelheroes.ui.details.adapter.model.DetailsItemView
+import com.example.marvelheroes.ui.details.adapter.model.TitleItemView
 import com.example.marvelheroes.ui.details.adapter.model.AttributesItemView
 import com.example.marvelheroes.ui.details.adapter.model.ViewType
 import com.example.marvelheroes.ui.details.adapter.model.ViewTypeDelegateAdapter
@@ -21,7 +22,7 @@ class CharacterDetailsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
             value?.let { items.add(it) }
             notifyDataSetChanged()
         }
-    var titleInfo: DetailsItemView? = null
+    var titleInfo: TitleItemView? = null
         set(value) {
             field = value
             value?.let { items.add(it) }
@@ -37,8 +38,8 @@ class CharacterDetailsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
     private var delegateAdapters = SparseArrayCompat<ViewTypeDelegateAdapter>()
 
     init {
-        //delegateAdapters.put(PICTURES, ProductPicturesDelegateAdapter())
-        //delegateAdapters.put(DETAILS, ProductTitleDelegateAdapter())
+        delegateAdapters.put(PICTURES, CharacterPicturesDelegateAdapter())
+        delegateAdapters.put(TITLE, CharacterTitleDelegateAdapter())
         //delegateAdapters.put(ATTRIBUTES, ProductAttributesDelegateAdapter())
     }
 
