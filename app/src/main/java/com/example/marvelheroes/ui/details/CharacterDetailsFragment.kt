@@ -13,8 +13,8 @@ import com.example.marvelheroes.data.model.Resource
 import com.example.marvelheroes.databinding.FragmentCharacterDetailBinding
 import com.example.marvelheroes.ui.details.adapter.CharacterDetailsAdapter
 import com.example.marvelheroes.ui.details.adapter.model.AttributesItemView
-import com.example.marvelheroes.ui.details.adapter.model.DetailsItemView
 import com.example.marvelheroes.ui.details.adapter.model.PictureItemView
+import com.example.marvelheroes.ui.details.adapter.model.TitleItemView
 import com.example.marvelheroes.ui.main.BaseFragment
 import com.example.marvelheroes.ui.main.CharacterViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -69,24 +69,21 @@ class CharacterDetailsFragment : BaseFragment() {
 
                 is Resource.Success -> {
                     characterDetailsAdapter.items.clear()
-                    resource.data?.let { product ->
+                    resource.data?.let { character ->
                         characterDetailsAdapter.titleInfo =
-                            DetailsItemView(title = product.name.orEmpty(),
-                                permalink = product.resourceURI.orEmpty(),
-                                currency = product.modified.orEmpty())
+                            TitleItemView(title = character.name.orEmpty())
 
-                        characterDetailsAdapter.pictures = PictureItemView(listOf(product.thumbnail?.path.orEmpty()))
+                        characterDetailsAdapter.pictures =
+                            PictureItemView(
+                                path = character.thumbnail?.path.orEmpty(),
+                                extension = character.thumbnail?.extension.orEmpty())
 
                         /*
                        characterDetailsAdapter.attributes =
-                            product.attributes?.map { AttributesItemView(it.name, it.value) }
+                            character.attributes?.map { AttributesItemView(it.name, it.value) }
+                        */
 
-                         */
                     }
-                    println("///////////////////////////////////////////////////////////////////")
-                    println(characterDetailsAdapter.titleInfo!!.title)
-                    println(characterDetailsAdapter.titleInfo!!.permalink)
-                    println(characterDetailsAdapter.titleInfo!!.currency)
                     binding.loadingView.root.visibility = View.GONE
                 }
                 else -> {
