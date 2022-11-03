@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/drawable/ic_search_action.xml" value="0.105" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/drawable/ic_thor.xml" value="0.1" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/layout/fragment_character_detail.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/layout/fragment_character_list.xml" value="0.1" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/layout/item_grid_view_character.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/layout/item_view_character.xml" value="0.12635869565217392" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/layout/view_loading.xml" value="0.1" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/menu/main_fragment.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/nicolas.g/Documents/MarvelHeroes/app/src/main/res/xml/network_security_config.xml" value="0.19586374695863748" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/drawable/bg_circle_avatar.xml" value="0.1" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/drawable/bg_shadow_overlay.xml" value="0.1" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/layout/activity_main.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/layout/fragment_character_list.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/layout/item_grid_view_character.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/layout/item_view_character.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/layout/view_loading.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/nicolas.g/Documents/Memefon/app/src/main/res/menu/main_fragment.xml" value="0.16770833333333332" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
