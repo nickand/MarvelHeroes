@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.memefon.ui.main.CharacterListFragment"
+        android:name="com.example.marvelheroes.ui.main.CharacterListFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_character_list">
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.memefon.ui.details.CharacterDetailsFragment"
+        android:name="com.example.marvelheroes.ui.details.CharacterDetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_character_detail">
         <argument
